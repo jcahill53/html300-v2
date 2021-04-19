@@ -4,6 +4,7 @@
 @import 'settings.responsive';
 @import 'components.content';
 
+// Variables
 $basecolorgray: $gray;
 $darkengray: darken($basecolorgray, 50%);
 
@@ -14,6 +15,8 @@ $darkengray: darken($basecolorgray, 50%);
     align-content: flex-start;
     flex-wrap: wrap;
 }
+
+// SCSS
 
 * {
     box-sizing: border-box;
@@ -60,13 +63,28 @@ main {
         font-weight: bold;
         font-size: 1.2rem;
     }
+    .main-right-bottom {
+        @extend %flex-row;
+    
+        p {
+            padding-left: 10px;
+        }
+    }
 }
 
 
-.main-right-bottom {
-    @extend %flex-row;
-
-    p {
-        padding-left: 10px;
+@media screen and (max-width: 767px) {
+ 
+    main {
+        width: 90%;
+        border: 20px solid $basecolorgray;
     }
+    .main-left {
+        width: 100%;
+        margin-top: 10px;
+    }
+    .main-right {
+        margin-top: 10px;
+    }
+
 }
