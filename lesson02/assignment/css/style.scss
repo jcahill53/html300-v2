@@ -1,4 +1,5 @@
 // Import partials here
+// Using settings.variables for color and settings.responsive for media query
 @import 'base.normalize';
 @import 'settings.variables';
 @import 'settings.responsive';
@@ -9,7 +10,7 @@ $basecolorgray: $gray;
 $darkengray: darken($basecolorgray, 50%);
 $breakpoint: "mobile";
 
-
+// use % and @extend to apply flex-box format throughout the site
 %flex-row {
     display: flex;
     flex-direction: row;
@@ -34,7 +35,7 @@ main {
     max-width: 81rem;
 }
 
-
+// Formatting for dog image, name and title
 .main-left {
     width: 33%;
     margin-top: 20px;
@@ -57,7 +58,7 @@ main {
         display: block;
     }
 }
-
+// Formatting for info about individual displayed in right side of card
 .main-right {
     margin-top: 30px;
     padding-left: 5%;
@@ -77,7 +78,7 @@ main {
 }
 
 
-// @media screen and (max-width: 767px) {
+// Formatting for iphone and smaller
 body {
     @include media-query ($breakpoint) {
         main {
