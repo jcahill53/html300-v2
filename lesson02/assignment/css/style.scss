@@ -7,6 +7,8 @@
 // Variables
 $basecolorgray: $gray;
 $darkengray: darken($basecolorgray, 50%);
+$breakpoint: "mobile";
+
 
 %flex-row {
     display: flex;
@@ -28,7 +30,8 @@ main {
     @extend %flex-row;
     border: 40px solid $basecolorgray;
     margin: 5% 5%;
-    width: 80%
+    width: 80%;
+    max-width: 81rem;
 }
 
 
@@ -63,9 +66,10 @@ main {
         font-weight: bold;
         font-size: 1.2rem;
     }
+
     .main-right-bottom {
         @extend %flex-row;
-    
+
         p {
             padding-left: 10px;
         }
@@ -73,18 +77,23 @@ main {
 }
 
 
-@media screen and (max-width: 767px) {
- 
-    main {
-        width: 90%;
-        border: 20px solid $basecolorgray;
-    }
-    .main-left {
-        width: 100%;
-        margin-top: 10px;
-    }
-    .main-right {
-        margin-top: 10px;
-    }
+// @media screen and (max-width: 767px) {
+body {
+    @include media-query ($breakpoint) {
+        main {
+            width: 90%;
+            border: 20px;
+            border: 25px solid $basecolorgray;
+        }
 
+        .main-left {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .main-right {
+            margin-top: 10px;
+        }
+
+    }
 }

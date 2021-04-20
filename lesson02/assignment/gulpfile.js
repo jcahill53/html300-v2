@@ -59,7 +59,7 @@ function browserSync() {
             baseDir: './'
         },
         notify: false,
-        browser: "chrome.ext"
+        browser: "chrome"
     });
 }
 
