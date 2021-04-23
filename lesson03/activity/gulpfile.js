@@ -59,10 +59,11 @@ function browserSync() {
             baseDir: './'
         },
         notify: false,
-        browser: "google chrome"
+        browser: "chrome.ext"
     });
 }
 
 const watching = parallel(watchFiles, browserSync);
 
 exports.default = watching;
+
