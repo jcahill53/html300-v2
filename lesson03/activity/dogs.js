@@ -6,7 +6,7 @@ function Dog(name,age,breed,color,bark,energy){
     this.color = color;
     this.bark = 10;
     this.enter = 0;
-    this.pat = function(){
+    pat = function(){
         console.log("Hello")
     }
 }
