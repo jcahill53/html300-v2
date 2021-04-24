@@ -1,6 +1,100 @@
 // Import partials here
+// Using settings.variables for color and settings.responsive for media query
 @import 'base.normalize';
 @import 'settings.variables';
 @import 'settings.responsive';
 @import 'components.content';
 
+// Variables
+$basecolorgray: $gray;
+$darkengray: darken($basecolorgray, 50%);
+$breakpoint: "mobile";
+
+// use % and @extend to apply flex-box format throughout the site
+%flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+}
+
+// SCSS
+
+* {
+    box-sizing: border-box;
+    color: $darkengray;
+    font-size: 1rem;
+}
+
+main {
+    @extend %flex-row;
+    border: 40px solid $basecolorgray;
+    margin: 5% 5%;
+    width: 80%;
+    max-width: 81rem;
+}
+
+// Formatting for dog image, name and title
+.main-left {
+    width: 33%;
+    margin-top: 20px;
+    text-align: center;
+
+    h1 {
+        color: $darkengray;
+        margin: .67rem 0 .5rem 0;
+    }
+
+    p {
+        font-size: 1.2rem;
+        font-style: italic;
+    }
+
+    img {
+        border-radius: 50%;
+        width: 75%;
+        margin: 0 auto;
+        display: block;
+    }
+}
+// Formatting for info about individual displayed in right side of card
+.main-right {
+    margin-top: 30px;
+    padding-left: 5%;
+
+    span {
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    .main-right-bottom {
+        @extend %flex-row;
+
+        p {
+            padding-left: 10px;
+        }
+    }
+}
+
+
+// Formatting for iphone and smaller
+body {
+    @include media-query ($breakpoint) {
+        main {
+            width: 90%;
+            border: 20px;
+            border: 25px solid $basecolorgray;
+        }
+
+        .main-left {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .main-right {
+            margin-top: 10px;
+        }
+
+    }
+}

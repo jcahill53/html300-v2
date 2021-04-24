@@ -1,4 +1,4 @@
-# Assignment 02 - Sass/Gulp/npm
+c# Assignment 02 - Sass/Gulp/npm
 
 ### Required setup
 - Install version 13 of [node](https://nodejs.org/en/) (this should be the latest version)
