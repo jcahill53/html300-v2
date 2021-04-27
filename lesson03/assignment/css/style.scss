@@ -81,8 +81,9 @@ main {
 }
 
 
-// Formatting for iphone and smaller
 body {
+    
+// Formatting for iphone and smaller
     @include media-query ($breakpoint) {
         main {
             width: 90%;
@@ -99,7 +100,7 @@ body {
             margin-top: 5px;
         }
     }
-
+// Formatting for larger than iphone up to ipad
     @include media-query ($breakpoint2) {
         main {
             width: 90%;
