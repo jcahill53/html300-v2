@@ -1,0 +1,52 @@
+// Media Query Generator
+
+@mixin media-query($mq2) {
+
+    $breakpoint2-found: false;
+
+    // Loop through the list of breakpoints we’ve provided in our settings file.
+    @each $breakpoint2 in $breakpoints2 {
+
+        // Grab the alias and the condition from their respective locations in
+        // the list.
+        $alias2:     nth($breakpoint2, 1);
+        $condition2: nth($breakpoint2, 2);
+
+        // If the media query we’ve specified has an alias and a condition...
+        @if $mq2 == $alias2 and $condition2 {
+
+            // ...tell the mixin that we’ve found it...
+            $breakpoint2-found: true;
+
+            // ...and spit it out here.
+            @media #{$condition2} {
+                @content;
+            }
+
+        }
+
+    }
+
+    // If the user specifies a non-exitent alias, send them a warning.
+    @if $breakpoint2-found == false{
+        @warn "Oops! Breakpoint ‘#{$mq}’ does not exist."
+    }
+
+}
+
+// Add breakpoints2
+$breakpoints2: (
+    "xl"            "screen and (min-width: 1300px)",
+    "desk"          "screen and (min-width: 1024px)",
+    "lg"            "screen and (min-width: 920px)",
+    "tab"           "screen and (min-width: 768px)",
+    "mobile"        "screen and (max-width: 767px)",
+    "infograph"     "screen and (min-width: 540px)",
+    "med"           "screen and (min-width: 40em)",
+    "sm"            "screen and (min-width: 30em)",
+    "small"         "screen and (min-width: 20em)",
+    "tiny"          "screen and (max-width: 320px)",
+    "retina"        "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)",
+    "ie"            "all and(-ms-high-contrast: none), (-ms-high-contrast: active)",
+    "ipad"          "screen and (min-device-width : 768px) and (max-device-width : 1024px)"
+) !default;
