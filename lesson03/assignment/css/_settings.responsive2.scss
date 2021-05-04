@@ -1,6 +1,8 @@
 // Media Query Generator
 
-@mixin media-query($mq2) {
+
+@mixin media-query($mq) {
+
 
     $breakpoint2-found: false;
 
@@ -13,7 +15,9 @@
         $condition2: nth($breakpoint2, 2);
 
         // If the media query we’ve specified has an alias and a condition...
-        @if $mq2 == $alias2 and $condition2 {
+
+        @if $mq == $alias2 and $condition2 {
+
 
             // ...tell the mixin that we’ve found it...
             $breakpoint2-found: true;
@@ -34,7 +38,8 @@
 
 }
 
-// Add breakpoints2
+// Add breakpoints
+
 $breakpoints2: (
     "xl"            "screen and (min-width: 1300px)",
     "desk"          "screen and (min-width: 1024px)",
