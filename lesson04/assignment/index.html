@@ -10,43 +10,56 @@
 </head>
 
 <body>
-  <header class = "header">
-    <img class="logo" src="images/Murphy.JPG" alt="Murphy Logo A Shamrock above the name Murphy">
-
+  <header class="header">
+    <!-- <img class="logo" src="images/Murphy.JPG" alt="Murphy Logo A Shamrock above the name Murphy"> -->
+    <img class="logo" src="images/celtic-knot-logo.jpg" alt="Celtic Cross Logo">
     <nav class="nav">
       <ul class="unord-list">
         <li class="list"> <a class="list-item" href="./index.html">Home</a></li>
         <!-- <li class="list">/</li> -->
-        <li class="list"> <a class="list-item"  href="./#.html">Blog</a></li>
+        <li class="list"> <a class="list-item" href="./blog.html">Blog</a></li>
         <!-- <li class="list">/</li> -->
-        <li class="list"><a class="list-item" href="./#.html">Family Members</a></li>
+        <li class="list"><a class="list-item" href="./members.html">Family Members</a></li>
         <!-- <li class="list">/</li> -->
-        <li class="list"> <a class="list-item" href="./#.html">Contact</a></li>
+        <li class="list"> <a class="list-item" href="./contact.html">Contact</a></li>
 
       </ul>
     </nav>
   </header>
-    <main class="main">
+  <main class="main-home">
 
-      <h1 class = "welcome">Welcome to the Murphy Family Site</h1>
+    <h1 class="welcome">Welcome to the Murphy Family Website</h1>
+    <h2 class="hdr2">A place for family to stay connected across the miles.</h2>
 
-      <section class="slideshow">
-        <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-        <article class="slides">
-          <img class="homeSlides" src="images/image1.JPG">
-          <img class="homeSlides" src="images/image2.jpg">
-          <img class="homeSlides" src="images/image3.jpg">
-          <img class="homeSlides" src="images/image4.jpg">
-          <img class="homeSlides" src="images/image5.jpg">
-        </article>
-        <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
-      </section>
-    </main>
-    <footer class="footer">
-      <p>Copyright &copy; 2021</p>
+    <p class="intro">Ipsum a arcu cursus vitae congue mauris. Nibh venenatis cras sed felis eget velit aliquet sagittis.
+      Viverra nam libero justo laoreet sit amet cursus. Metus aliquam eleifend mi in nulla. Tellus molestie nunc non
+      blandit. Cras semper auctor neque vitae tempus quam pellentesque nec. Semper viverra nam libero justo laoreet sit
+      amet cursus. Mus mauris vitae ultricies leo. Dolor magna eget est lorem ipsum dolor sit amet consectetur. Sit amet
+      porttitor eget dolor morbi non arcu. Viverra tellus in hac habitasse platea. Faucibus nisl tincidunt eget nullam.
+      Nulla aliquet porttitor lacus luctus accumsan tortor posuere ac ut. Vel pharetra vel turpis nunc eget lorem dolor.
+      Eu non diam phasellus vestibulum lorem sed risus ultricies tristique. Placerat orci nulla pellentesque dignissim
+      enim. Sed libero enim sed faucibus turpis in eu mi.</p>
 
-    </footer>
-    <script src="js/slideshow.js"></script>
-</body>
+    <section class="slideshow">
+      <button class="w3-button" onclick="plusDivs(-1)">&#10094; Prev</button>
+      <article class="slides">
+        <img class="homeSlides" src="images/image1.JPG">
+        <img class="homeSlides" src="images/image2.jpg">
+        <img class="homeSlides" src="images/image3.jpg">
+        <img class="homeSlides" src="images/image4.jpg">
+        <img class="homeSlides" src="images/image5.jpg">
+      </article>
+      <button class="w3-button" onclick="plusDivs(1)">Next &#10095;</button>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="copyright">Copyright &copy; 2021</p>
+
+  </footer>
+
+  <script src="js/slideshow.js"></script>
+  <script src="js/activePage.js"></script>
+</body> 
 
 </html>

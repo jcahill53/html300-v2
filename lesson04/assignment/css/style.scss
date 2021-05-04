@@ -1,27 +1,40 @@
-$basecolor: darkgreen;
-$gradiant: rgb(156, 206, 230);
+$basecolor: rgb(68, 126, 68);
+$lightbasecolor: lighten($basecolor, 50%);
+$gradiant: rgb(176, 215, 233);
+$basecolor2: white;
+$basecolor3:lighten(darkgray, 25%);
+$basecolor4: rgba(221, 48, 48, 0.836);
+$lightbase4: lighten($basecolor4, 60%);
+$sattbase4: adjust-hue($basecolor4, 50%);
+$medbase: lighten($basecolor, 20%);
+$lightbase: lighten($basecolor, 50%);
+$darkgrad: darken($gradiant, 50%);
+$satgrad: saturate($gradiant, 25%);
+
 
 * {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
-    font-size: 1rem;
+    // font-size: .9rem;
 }
 
 .header {
     background: linear-gradient(50deg, $basecolor, $gradiant);
-    color: white;
+    color: $basecolor2;
     display: flex;
     flex-direction: row;
     justify-content: flex start;
     align-content: center;
     flex-wrap: wrap;
     width: 100%;
+    min-height: 20rem;
 
 
     .logo {
-        width: 25%;
+        width: 15%;
+        height: 15%;
         margin-left: 5%;
         margin-top: 10px;
         margin-bottom: 10px;
@@ -42,17 +55,48 @@ $gradiant: rgb(156, 206, 230);
             list-style-type: none;
 
             .list {
-                // margin-left: 5%;
 
                 .list-item {
-                    color: white;
+                    color: $basecolor2;
                     text-decoration: none;
                     font-weight: bold;
-                    font-size: 1.3rem;
+                    font-size: 2.5rem;
+                    padding: 2rem 3rem;
+                }
 
+                .list-item:hover {
+                    background-color: $basecolor;
+                    color: $lightbasecolor;
+                    border: 2px solid $basecolor4;
+                    border-radius: 24px;
+                }
+
+                .list-item:active {
+                    background-color: $basecolor4;
+                    color: $lightbasecolor;
+                    border: 2px solid $basecolor;
+                    border-radius: 24px;
+                    text-decoration: underline;
+                }
+
+                .current {
+                    font-size: 2.5rem;
+                    background-color: $basecolor4;
+                    color: $lightbasecolor;
+                    border: 2px solid $basecolor;
+                    border-radius: 24px;
+                    text-decoration: underline;
+                    font-weight: bold;
+                    padding: 2rem 3rem;
                 }
 
             }
+
+            .list:hover {
+                transform: scale(1.25);
+                transition: all 300ms 300ms;
+            }
+
         }
 
 
@@ -60,33 +104,87 @@ $gradiant: rgb(156, 206, 230);
     }
 }
 
-.main {
+body {
+    background-image: url("../images/celtic-knots2.jpg");
+    background-repeat: repeat;
+    background-size: 300px 100px;
+    // min-height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex start;
+}
 
+main,
+.main {
+    width: 75%;
+    background-color: $basecolor3;
+    margin: 0 auto;
+    min-height: 50rem;
+    padding-bottom: 10rem;
+
+    h1,
     .welcome {
+        color: $basecolor4;
+        font-size: 5rem;
+        text-align: center;
+        padding-top: 5rem;
+        padding-bottom: 2rem;
+    }
+
+    h2,
+    .hdr2 {
         color: $basecolor;
         font-size: 3rem;
         text-align: center;
-        margin-top: 5rem;
-        margin-bottom: 5rem;
+
+    }
+
+    h3,
+    .hdr3 {
+        color: $basecolor;
+        font-size: 2rem;
+        text-align: center;
+
+    }
+
+    .intro {
+        font-size: 1.5rem;
+        text-align: center;
+        color: basecolor2;
+        margin: 3% 15%
     }
 
     .slideshow {
         display: flex;
         flex-direction: row;
         justify-content: flex start;
-        width: 50%;
-        margin:auto;
+        width: 75%;
+        margin: auto auto;
+        border: 5px double $darkgrad;
 
-        .slides img {
+
+        .slides {
+            background-color: $basecolor;
+        }
+
+        .homeSlides {
             width: 100%;
-            height: 400px;
+            transform: scale(0.9);
+            opacity: 0.8;
+            transition: all 0.5s ease-in-out;
+            // height: 400px;
+
         }
 
 
         .w3-button {
-            height: 50%;
-            width: 10%;
-            margin-top: 20%;
+            background-color: $basecolor4;
+            color: $basecolor2;
+            font-weight: bold;
+            font-size: 1.5rem;
+            padding-left: 2%;
+            padding-right: 2%;
+
         }
 
     }
@@ -95,9 +193,19 @@ $gradiant: rgb(156, 206, 230);
 }
 
 .footer {
-    color: white;
+    color: $basecolor2;
     background: linear-gradient(50deg, $basecolor, $gradiant);
     text-align: center;
-    padding: 5% 1%;
-    margin-top: 5%;
+    padding: 3% 1%;
+    // min-height: 5rem;
+
+
+    p {
+        font-size: 2rem;
+        margin: 0 auto;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+
+
+    }
 }
