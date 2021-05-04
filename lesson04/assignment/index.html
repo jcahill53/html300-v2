@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,45 @@
   <link rel="stylesheet" href="css/style.css">
   <title>Document</title>
 </head>
-<body>
-  <main class="main">
 
-  </main>
+<body>
+  <header class = "header">
+    <img class="logo" src="images/Murphy.JPG" alt="Murphy Logo A Shamrock above the name Murphy">
+
+    <nav class="nav">
+      <ul class="unord-list">
+        <li class="list"> <a class="list-item" href="./index.html">Home</a></li>
+        <!-- <li class="list">/</li> -->
+        <li class="list"> <a class="list-item"  href="./#.html">Blog</a></li>
+        <!-- <li class="list">/</li> -->
+        <li class="list"><a class="list-item" href="./#.html">Family Members</a></li>
+        <!-- <li class="list">/</li> -->
+        <li class="list"> <a class="list-item" href="./#.html">Contact</a></li>
+
+      </ul>
+    </nav>
+  </header>
+    <main class="main">
+
+      <h1 class = "welcome">Welcome to the Murphy Family Site</h1>
+
+      <section class="slideshow">
+        <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+        <article class="slides">
+          <img class="homeSlides" src="images/image1.JPG">
+          <img class="homeSlides" src="images/image2.jpg">
+          <img class="homeSlides" src="images/image3.jpg">
+          <img class="homeSlides" src="images/image4.jpg">
+          <img class="homeSlides" src="images/image5.jpg">
+        </article>
+        <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
+      </section>
+    </main>
+    <footer class="footer">
+      <p>Copyright &copy; 2021</p>
+
+    </footer>
+    <script src="js/slideshow.js"></script>
 </body>
+
 </html>
