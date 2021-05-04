@@ -1,4 +1,5 @@
 // Import partials here
+// Using settings.variables for color and settings.responsive for media query
 @import 'base.normalize';
 @import 'settings.variables';
 @import 'settings.responsive';
@@ -42,8 +43,10 @@ $basecolorgray: $gray;cd
 }
 
 
+
 // Formatting for iphone and smaller
 body {
+
     @include media-query ($breakpoint) {
         main {
             width: 90%;
@@ -60,6 +63,8 @@ body {
             margin-top: 5px;
         }
     }
+
+// Formatting for larger than iphone up to ipad
 
     @include media-query ($breakpoint2) {
         main {
@@ -78,4 +83,6 @@ body {
         }
 
     }
+
 } 
+

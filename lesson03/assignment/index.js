@@ -81,4 +81,5 @@ let cardsHTML = cards.map(function (el) {
   return card;
 });
 
+
 document.querySelector('div.container').innerHTML = cardsHTML; 
