@@ -7,45 +7,7 @@
 @import 'components.content';
 
 // Additional Variables
-$basecolorgray: $gray;
-$darkengray: darken($basecolorgray, 50%);
-$breakpoint: "mobile";
-$breakpoint2: "ipad";
-
-// use % and @extend to apply flex-box format throughout the site
-%flex-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-content: flex-start;
-    flex-wrap: wrap;
-}
-
-// SCSS
-
-* {
-    box-sizing: border-box;
-    color: $darkengray;
-    font-size: 1rem;
-}
-
-main {
-    @extend %flex-row;
-    border: 40px solid $basecolorgray;
-    margin: 2% 5%;
-    width: 80%;
-    max-width: 81rem;
-}
-
-// Formatting for dog image, name and title
-.main-left {
-    width: 33%;
-    margin-top: 20px;
-    text-align: center;
-
-    h1 {
-        margin: .67rem 0 .5rem 0;
-        color: $darkengray;
+$basecolorgray: $gray;cd
     }
 
     p {
