@@ -1,9 +1,10 @@
+// Variables for color pallet
 $basecolor: rgb(68, 126, 68);
-$lightbasecolor: lighten($basecolor, 50%);
-$gradiant: rgb(176, 215, 233);
 $basecolor2: white;
 $basecolor3:lighten(darkgray, 25%);
 $basecolor4: rgba(221, 48, 48, 0.836);
+$lightbasecolor: lighten($basecolor, 50%);
+$gradiant: rgb(176, 215, 233);
 $lightbase4: lighten($basecolor4, 60%);
 $sattbase4: adjust-hue($basecolor4, 50%);
 $medbase: lighten($basecolor, 20%);
@@ -11,7 +12,7 @@ $lightbase: lighten($basecolor, 50%);
 $darkgrad: darken($gradiant, 50%);
 $satgrad: saturate($gradiant, 25%);
 
-
+// reset default settings
 * {
     margin: 0;
     padding: 0;
@@ -20,6 +21,7 @@ $satgrad: saturate($gradiant, 25%);
     // font-size: .9rem;
 }
 
+// header including logo and nav
 .header {
     background: linear-gradient(50deg, $basecolor, $gradiant);
     color: $basecolor2;
@@ -64,12 +66,16 @@ $satgrad: saturate($gradiant, 25%);
                     padding: 1rem 3rem;
                 }
 
+                // On hover change formatting of menu item to highlight
+
                 .list-item:hover {
                     background-color: $basecolor;
                     color: $lightbasecolor;
                     border: 2px solid $basecolor4;
                     border-radius: 24px;
                 }
+
+                // When button is clicked change formatting of menu item to highlight
 
                 .list-item:active {
                     background-color: $basecolor4;
@@ -79,27 +85,29 @@ $satgrad: saturate($gradiant, 25%);
                     text-decoration: underline;
                 }
 
-                .current {
-                    font-size: 2.5rem;
-                    background-color: $basecolor4;
-                    color: $lightbasecolor;
-                    border: 2px solid $basecolor;
-                    border-radius: 24px;
-                    text-decoration: underline;
-                    font-weight: bold;
-                    padding: 1rem 3rem;
-                }
-
+                // Set format of menu item for page user is currently on.  Uses js file activePage.js to add class of "active" if page is active
+                font-size: 2.5rem;
+                background-color: $basecolor4;
+                color: $lightbasecolor;
+                border: 2px solid $basecolor;
+                border-radius: 24px;
+                text-decoration: underline;
+                font-weight: bold;
+                padding: 1rem 3rem;
             }
 
-            .list:hover {
-                transform: scale(1.25);
-                transition: all 300ms 100ms;
-            }
+        }
+
+        // Perform transform on menu item on hover to enlarge the size and transition all hover formatting
+        .list:hover {
+            transform: scale(1.25);
+            transition: all 300ms 100ms;
         }
     }
 }
+}
 
+// Body of page
 body {
     background-image: url("../images/celtic-knots2.jpg");
     background-repeat: repeat;
@@ -150,6 +158,7 @@ main,
         margin: 3% 15%
     }
 
+    // Slides use slideshow.js to allow user to move through slides by clicking previous and next buttons
     .slideshow {
         display: flex;
         flex-direction: row;
@@ -189,6 +198,7 @@ main,
 
 }
 
+// footer
 .footer {
     color: $basecolor2;
     background: linear-gradient(50deg, $basecolor, $gradiant);
