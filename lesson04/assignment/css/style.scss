@@ -71,7 +71,7 @@ $satgrad: saturate($gradiant, 25%);
                 .list-item:hover {
                     background-color: $basecolor;
                     color: $lightbasecolor;
-                    border: 2px solid $basecolor4;
+                    border: 6px ridge $basecolor4;
                     border-radius: 24px;
                 }
 
@@ -80,39 +80,43 @@ $satgrad: saturate($gradiant, 25%);
                 .list-item:active {
                     background-color: $basecolor4;
                     color: $lightbasecolor;
-                    border: 2px solid $basecolor;
+                    border: 6px ridge $basecolor;
                     border-radius: 24px;
                     text-decoration: underline;
                 }
 
                 // Set format of menu item for page user is currently on.  Uses js file activePage.js to add class of "active" if page is active
-                font-size: 2.5rem;
-                background-color: $basecolor4;
-                color: $lightbasecolor;
-                border: 2px solid $basecolor;
-                border-radius: 24px;
-                text-decoration: underline;
-                font-weight: bold;
-                padding: 1rem 3rem;
+                .current {
+                    font-size: 2.5rem;
+                    background-color: $basecolor4;
+                    color: $lightbasecolor;
+                    border: 6px ridge $basecolor;
+                    border-radius: 24px;
+                    text-decoration: underline;
+                    font-weight: bold;
+                    padding: 1rem 3rem;
+                }
+
+
             }
 
         }
 
         // Perform transform on menu item on hover to enlarge the size and transition all hover formatting
+
         .list:hover {
             transform: scale(1.25);
             transition: all 300ms 100ms;
         }
     }
 }
-}
+
 
 // Body of page
 body {
     background-image: url("../images/celtic-knots2.jpg");
     background-repeat: repeat;
     background-size: 300px 100px;
-    // min-height:100vh;
     display: flex;
     flex-direction: column;
     justify-content: flex start;
@@ -123,7 +127,7 @@ main,
     width: 90%;
     background-color: $basecolor3;
     margin: 0 auto;
-    min-height: 50rem;
+    min-height: 80rem;
     padding-bottom: 10rem;
 
     h1,
@@ -155,11 +159,60 @@ main,
         font-size: 2em;
         text-align: center;
         color: basecolor2;
-        margin: 3% 15%
+        margin: 3% 5%
     }
 
-    // Slides use slideshow.js to allow user to move through slides by clicking previous and next buttons
+    // Home option 2 - Slides use slideshow2.js to automatically move through pictures
     .slideshow {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex start;
+        position:relative;
+        width: 50%;
+        background-color: $basecolor;
+        margin: auto auto;
+        border: 20px ridge $basecolor4;
+        border-radius: 24px;
+
+
+        .slides {
+            transition: transform 500ms ease-out;
+            position:relative;
+            .slide {
+                width: 100%;
+                // height: 400px;
+                display: none;
+                // justify-content: center;
+                // align-items: center;
+                transform: scale(0.5);
+                opacity: 0.5;
+                transition: all 3s ease-in-out;
+
+                .slide-img {
+                    width: 100%;
+
+                }
+
+
+            }
+            .showing {
+                width: 100%;
+                height: 400px;
+                display: inline-block;
+                justify-content: center;
+                align-items: center;
+                transform: scale(1);
+                opacity: 1;
+                z-index: 1;
+                transition: all 0.5s ease-in-out;
+      
+            }
+        }
+    }
+
+
+    // Home option 1 - Slides use slideshow.js to allow user to move through slides by clicking previous and next buttons
+    .slideshow-manual {
         display: flex;
         flex-direction: row;
         justify-content: flex start;
@@ -171,10 +224,10 @@ main,
         border: 5px double $darkgrad;
         border-radius: 24px;
 
-        .slides {
+        .slides-manual {
             background-color: $basecolor;
 
-            .homeSlides {
+            .slide-manual {
                 width: 100%;
                 transform: scale(0.9);
                 opacity: 0.8;
@@ -195,8 +248,10 @@ main,
 
     }
 
-
 }
+
+
+
 
 // footer
 .footer {
