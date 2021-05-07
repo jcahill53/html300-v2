@@ -1,0 +1,274 @@
+// Variables for color pallet
+$basecolor: rgb(68, 126, 68);
+$basecolor2: white;
+$basecolor3:lighten(darkgray, 25%);
+$basecolor4: rgba(221, 48, 48, 0.836);
+$lightbasecolor: lighten($basecolor, 50%);
+$gradiant: rgb(176, 215, 233);
+$lightbase4: lighten($basecolor4, 60%);
+$sattbase4: adjust-hue($basecolor4, 50%);
+$medbase: lighten($basecolor, 20%);
+$lightbase: lighten($basecolor, 50%);
+$darkgrad: darken($gradiant, 50%);
+$satgrad: saturate($gradiant, 25%);
+
+// reset default settings
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    font-size: .9rem;
+}
+
+// header including logo and nav
+.header {
+    background: linear-gradient(50deg, $basecolor, $gradiant);
+    color: $basecolor2;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex start;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 10rem;
+
+
+    .logo {
+        width: 10%;
+        // height: 10%;
+        margin-left: 5%;
+        margin-top: 3px;
+        margin-bottom: 3px;
+    }
+
+    .nav {
+        width: 70%;
+        margin-left: 10%;
+        position: relative;
+        margin: auto;
+
+        .unord-list {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-content: center;
+            flex-wrap: wrap;
+            list-style-type: none;
+
+            .list {
+
+                .list-item {
+                    color: $basecolor2;
+                    text-decoration: none;
+                    font-weight: bold;
+                    font-size: 1.5rem;
+                    padding: 1rem 2rem;
+                }
+
+                // On hover change formatting of menu item to highlight
+
+                .list-item:hover {
+                    background-color: $basecolor;
+                    color: $lightbasecolor;
+                    border: 4px ridge $basecolor4;
+                    border-radius: 20px;
+                }
+
+                // When button is clicked change formatting of menu item to highlight
+
+                .list-item:active {
+                    background-color: $basecolor4;
+                    color: $lightbasecolor;
+                    border: 4px ridge $basecolor;
+                    border-radius: 20px;
+                    text-decoration: underline;
+                }
+
+                // Set format of menu item for page user is currently on.  Uses js file activePage.js to add class of "active" if page is active
+                .current {
+                    font-size: 1.5rem;
+                    background-color: $basecolor4;
+                    color: $lightbasecolor;
+                    border: 4px ridge $basecolor;
+                    border-radius: 24px;
+                    text-decoration: underline;
+                    font-weight: bold;
+                    padding: 1rem 2rem;
+                }
+
+
+            }
+
+        }
+
+        // Perform transform on menu item on hover to enlarge the size and transition all hover formatting
+
+        .list:hover {
+            transform: scale(1.25);
+            transition: all 300ms 100ms;
+        }
+    }
+}
+
+
+// Body of page
+body {
+    background-image: url("../images/celtic-knots2.jpg");
+    background-repeat: repeat;
+    background-size: 300px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex start;
+}
+
+main,
+.main {
+    width: 90%;
+    background-color: $basecolor3;
+    margin: 0 auto;
+    min-height: 40rem;
+    padding-bottom: 5rem;
+
+    h1,
+    .welcome {
+        color: $basecolor4;
+        font-size: 3rem;
+        text-align: center;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    h2,
+    .hdr2 {
+        color: $basecolor;
+        font-size: 2rem;
+        text-align: center;
+
+    }
+
+    h3,
+    .hdr3 {
+        color: $basecolor;
+        font-size: 1.5rem;
+        text-align: center;
+
+    }
+
+    .intro {
+        font-size: 1em;
+        text-align: center;
+        color: basecolor2;
+        margin: 3% 5%
+    }
+
+    // Home option 2 - Slides use slideshow2.js to automatically move through pictures
+    .slideshow {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex start;
+        // position:relative;
+        width: 40%;
+        height:auto;
+        background-color: $basecolor;
+        margin: auto auto;
+        border: 10px ridge $basecolor4;
+        border-radius: 20px;
+
+
+        .slides {
+            transition: transform 500ms ease-out;
+            position:relative;
+            .slide {
+                width: 100%;
+                height:auto;
+                display: none;
+                // justify-content: center;
+                // align-items: center;
+                transform: scale(0.5);
+                opacity: 0.5;
+                transition: all 3s ease-in-out;
+
+                .slide-img {
+                    width: 100%;
+
+                }
+
+
+            }
+            .showing {
+                width: 100%;
+                height: auto;
+                display: inline-block;
+                justify-content: center;
+                align-items: center;
+                transform: scale(1);
+                opacity: 1;
+                z-index: 1;
+                transition: all 0.5s ease-in-out;
+      
+            }
+        }
+    }
+
+
+    // Home option 1 - Slides use slideshow.js to allow user to move through slides by clicking previous and next buttons
+    .slideshow-manual {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex start;
+        width: 60%;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        background-color: $basecolor4;
+        margin: auto auto;
+        border: 5px double $darkgrad;
+        border-radius: 24px;
+
+        .slides-manual {
+            background-color: $basecolor;
+
+            .slide-manual {
+                width: 100%;
+                transform: scale(0.9);
+                opacity: 0.8;
+                transition: all 0.5s ease-in-out;
+            }
+        }
+
+
+        .w3-button {
+            background-color: $basecolor4;
+            color: $basecolor2;
+            font-weight: bold;
+            font-size: 1rem;
+            padding-left: 1%;
+            padding-right: 1%;
+
+        }
+
+    }
+
+}
+
+
+
+
+// footer
+.footer {
+    color: $basecolor2;
+    background: linear-gradient(50deg, $basecolor, $gradiant);
+    text-align: center;
+    padding: 1% 1%;
+    min-height: 5rem;
+
+
+    p {
+        font-size: 1.5rem;
+        margin: 0 auto;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+
+
+    }
+}
