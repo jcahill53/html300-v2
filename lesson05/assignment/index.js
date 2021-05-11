@@ -1,47 +1,73 @@
-// Array of card content
-const cards = [{
-    "description": "Betsy's Birthday",
-    "end.date": "6/20/21",
-    "end": "11:59pm",
-    "end.timeZone": "EST",
-    "start.date": "6/20/21",
-    "start": "12:00am",
-    "start.timeZone": "EST",
-    "location": "Islandia, NY",
-    "organizer.displayName": "Rich",
-    "organizer.email": "rmurphy@email.com",
-  }
-  
+// Array of family events
+const events = [{
+        "description": "John's Birthday",
+        "enddate": "5/15/21",
+        "end": "11:59pm",
+        "endtimeZone": "EST",
+        "startdate": "5/15/21",
+        "start": "12:00am",
+        "starttimeZone": "EST",
+    }, 
+    {
+        "description": "Tim's Birthday",
+        "end.date": "5/23/21",
+        "end": "11:59pm",
+        "endtimeZone": "EST",
+        "startdate": "6/20/21",
+        "start": "12:00am",
+        "starttimeZone": "EST",
+    },
+    {
+        "description": "Betsy's Birthday",
+        "enddate": "6/23/21",
+        "end": "11:59pm",
+        "endtimeZone": "EST",
+        "startdate": "6/25/21",
+        "start": "12:00am",
+        "starttimeZone": "EST",
+    }, 
+    {
+        "description": "Family Reunion",
+        "enddate": "7/05/21",
+        "end": "9:00pm",
+        "endtimeZone": "EST",
+        "startdate": "7/05/21",
+        "start": "2:00pm",
+        "starttimeZone": "EST",
+    },
+    {
+        "description": "Owen's Birthday",
+        "enddate": "7/20/21",
+        "end": "11:59pm",
+        "endtimeZone": "EST",
+        "startdate": "7/20/21",
+        "start": "12:00am",
+        "starttimeZone": "EST",
+    }, 
+    {
+        "description": "Mom and Dad's Anniversay",
+        "enddate": "7/24/21",
+        "end": "11:59pm",
+        "endtimeZone": "EST",
+        "startdate": "7/24/21",
+        "start": "12:00am",
+        "starttimeZone": "EST",
+    }, 
 ]
 
 // Autogenerate HTML in index.html based on objects in the array
 
 let eventsHTML = events.map(function (el) {
 
-  let event = `<main class = "main">     
-      <section class="main-left">
-          <img src="img/headshot.jpg" alt="Brown and white dog with a black bow tie">
-          <h1>${el.name}</h1>
-          <p>${el.jobTitle}</p>
-      </section>
-      <section class="main-right">
-          <section class="main-right-top">
-              <p><span>Company:</span> ${el.company}</p>
-              <p><span>Experience:</span> ${el.experience}</p>
-              <p><span>School:</span> ${el.school}</p>
-              <p><span>Major:</span> ${el.major}</p>
-              <p><span>Email:</span> ${el.email}</p>
-          </section>
-          <section class="main-right-bottom">
-              <img src="img/linkedin.svg" alt="Linked In Icon">
-              <p>${el.linkedInUrl}</p>
-          </section>
-      </section>
-      </main>`;
+    let event = `<article>
+    <h4>${el.description}</h4>
+    <p><span>Date:  </span>${el.startdate}</p>
+    <p><span>Start:  </span>${el.start} ${el.starttimeZone}</p>
+    <p><span>End: </span>${el.end}  ${el.endtimeZone}</p>
+  </article>`;
 
-  return card;
+    return event;
 });
 
 
-document.querySelector('div.container').innerHTML = cardsHTML; 
-© 2021 GitHub, Inc.
+document.querySelector('div.event-container').innerHTML = eventsHTML;
