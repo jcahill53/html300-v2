@@ -15,11 +15,11 @@
  <body>
 
    <header class="header mw-100 bg-success bg-gradiant text-warning container">
-     <div class="row align-items-center">
-       <div class="thumbnail m-3  col-sm-3">
-         <img class="logo" src="images/celtic-knot-logo-sm.jpg" alt="Celtic Cross Logo">
+     <div class="d-flex flex-row align-items-center justify-content-around">
+       <div class="col-sm-3 w-30">
+         <img class="logo col-sm-3  w-100" src="images/celtic-knot-logo-sm.jpg" alt="Celtic Cross Logo">
        </div>
-       <h1 class="site-title fw-bold col-sm-8">Murphy Family Website</h1>
+       <h1 class="site-title fw-bold text-center col-sm-9">Murphy Family Website</h1>
      </div>
    </header>
 
@@ -72,13 +72,13 @@
            data-bs-parent="#accordionFlushExample">
            <div class="accordion-body">
              <div class="row">
-               <img class="leinster col" src="images/irish-map.JPG"
+               <img class="leinster col mw-50" src="images/irish-map.JPG"
                  alt="Map of Ireland showing Leinster in the southeastern corner of the country">
                <p class="col">The surname Murphy was first found in County Wexford (Irish: Loch Garman), founded
                  by Vikings as Waesfjord, and located in Southeastern Ireland, in the province of Leinster, where they
                  held
                  a family seat from very early times. </p>
-               <img class="wexford col" src="images/wexford-map.JPG"
+               <img class="wexford col mw-50" src="images/wexford-map.JPG"
                  alt="Map of Ireland showing Wexford County along the southeastern shorline of Ireland">
              </div>
            </div> <!--  end of accordian body -->
@@ -125,74 +125,86 @@
        </div> <!--  end of accordian collapsable area -->
      </div> <!--  end of accordian item -->
 
-     <!-- Start of the section to enter a fun fact -->
-     <div class="fun-facts mb-5">
-       <h2 class="text-center fw-bold pb-3 pt-5">Send in fun facts you find!</h2>
+     <form id="factForm"  onsubmit="return validateForm()" >
+      <div class="wrapper">
+        <h2 class="text-center fw-bold pb-3 pt-5">Send in fun facts you find!</h2>
+          <fieldset id = "fieldset">
+              <div class="personal-info mb-3 p-1">
+                  <label class="form-label fw-bold text-warning bg-secondary w-100 p-2  " for="name" id="name">First and Last Name</label>
+                      <input class = "mb-3" type="text" name="name" id="name" autofocus>
 
-       <form>
          <!-- email address -->
-         <div class="mb-5 p-1  ">
-           <label for="InputEmail1" class="form-label fw-bold text-warning bg-secondary w-100 p-2">Please provide your
-             Email address</label>
-           <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp">
-           <div id="emailHelp" class="form-text fs-6 fw-none">We'll never share your email with anyone else.</div>
-         </div>
+
+        <div class="p-1  ">
+        <label class="form-label fw-bold text-warning bg-secondary w-100 p-2" for="email" >Please provide your
+          Email address</label>
+          <input type="email"  name="email" id="email" placeholder="your-user-id@provider-name.com">
+      </label>
+    </div>
+
+                  </div> <!--  end of personal-info div -->
+
+  
 
          <!-- Checkbox selection -->
-         <div class="mb-5 ">
-           <p class="text-warning bg-secondary fw-bold  w-100 p-2">Which categories fit your fun fact?</p>
-           <!-- checkbox1 -->
-           <div class="mb-3 form-check">
-             <input class="form-check-input" type="checkbox" value="" id="flexCheck1">
-             <label class="form-check-label text-dark" for="flexCheck1">
-               A fun fact about our family
-             </label>
-           </div> <!-- end of checkbox1 -->
-           <!-- checkbox2 -->
-           <div class="mb-3 form-check">
-             <input class="form-check-input" type="checkbox" value="" id="flexCheck2">
-             <label class="form-check-label text-dark " for="flexCheck2">
-               A fun fact about the Murphy Clan in general
-             </label>
-           </div> <!-- checkbox2 -->
-           <!-- checkbox3-->
-           <div class="mb-3 form-check ">
-             <input class="form-check-input" type="checkbox" value="" id="flexCheck3">
-             <label class="form-check-label text-dark" for="flexCheck3">
-               A fun fact about where we come from in Ireland
-             </label>
-           </div> <!-- end of checkbox3 -->
+         <div class="mb-3 ">
+          <p class="text-warning bg-secondary fw-bold  w-100 p-2">Which categories fit your fun fact?</p>
+          <!-- checkbox1 -->
+          <div class="mb-3 form-check">
+            <input class="form-check-input" type="checkbox" value="fact-type" id="flexCheck1">
+            <label class="form-check-label text-dark" for="flexCheck1">
+              A fun fact about our family
+            </label>
+          </div> <!-- end of checkbox1 -->
+          <!-- checkbox2 -->
+          <div class="mb-3 form-check">
+            <input class="form-check-input" type="checkbox" value="fact-type"" id="flexCheck2">
+            <label class="form-check-label text-dark " for="flexCheck2">
+              A fun fact about the Murphy Clan in general
+            </label>
+          </div> <!-- checkbox2 -->
+          <!-- checkbox3-->
+          <div class="mb-3 form-check ">
+            <input class="form-check-input" type="checkbox" value="fact-type"" id="flexCheck3">
+            <label class="form-check-label text-dark" for="flexCheck3">
+              A fun fact about where we come from in Ireland
+            </label>
+          </div> <!-- end of checkbox3 -->
 
-         </div> <!-- end of checkbox section -->
+        </div> <!-- end of checkbox section -->
 
-         <!-- text box for the fun fact -->
-         <div class="mb-3 fw-bold">
-           <label for="FormControlTextarea1" class="form-label  bg-secondary fw-bold text-warning w-100 p-2">Tell us
-             your
-             fun fact about Murphys</label>
-           <textarea class="form-control" id="FormControlTextarea1" rows="3"></textarea>
-         </div> <!-- end of the fun fact entry section -->
+        <!-- text box for the fun fact -->
+        <div class="mb-3 fw-bold">
+          <label for="textArea1" class="form-label  bg-secondary fw-bold text-warning w-100 p-2">Tell us
+            your
+            fun fact about Murphys</label>
+          <textarea class="form-control" id="textArea1" rows="3"></textarea>
+        </div> <!-- end of the fun fact entry section -->
+    
 
-         <button type="submit" class="btn btn-success mt-3">Submit</button>
-     </div> <!-- end of fun facts section -->
-     </form>
+          <button id="fact-button" class="fact-button" type="submit" value="Submit"
+              name="submit">Submit</button>
 
-   </div> <!--  end of div for main content max width -->
-   <footer class="footer p-3 mt-3 bg-success bg-gradiant text-light text-center">
-     <p class="copyright">Copyright &copy; 2021</p>
-     <p class="source"><a class="link-light"
-         href="https://www.google.com/search?q=Murphy+clan+fun+facts&rlz=1C1CHBF_enUS870US876&sxsrf=ALeKk03O0hEm_HAE_krTRkE2gSkNwYVDBw%3A1621204998609&ei=BqChYOnUJM_9-gTeyKDIDw&oq=Murphy+clan+fun+facts&gs_lcp=Cgdnd3Mtd2l6EAM6BwgAEEcQsAM6BwgjELACECc6CAgAEA0QBRAeOggIABAIEA0QHjoECCEQClDbXli8aGDGbmgCcAJ4AIABkQGIAb8EkgEDMy4zmAEAoAEBqgEHZ3dzLXdpesgBB8ABAQ&sclient=gws-wiz&ved=0ahUKEwjp77Kgo8_wAhXPvp4KHV4kCPkQ4dUDCA4&uact=5">Google
-         Search on Murphy Fun Facts</a></p>
-     <p class="clan"><a class="link-light"
-         href="https://namestories.com/products/murphy-boy-name-print-classic?currency=USD&variant=32189120741441&utm_medium=cpc&utm_source=google&utm_campaign=Google%20Shopping&gclid=CjwKCAjwhYOFBhBkEiwASF3KGcSC62tNqgVvTc562Cd1wBUP8fDBqLdlNOR4zbEUO7pXY5oy0lKBiBoC1hgQAvD_BwE">
-         Name Stories</a></p>
+      </div>
+      <!-- end of wrapper -->
+  </form>
 
 
-   </footer>
 
-   <script src="js/slideshow.js"></script>
-   <script src="js/activePage.js"></script>
-   <script src="index.js"></script>
+     </div> <!--  end of div for main content max width -->
+     <footer class="footer p-3 mt-3 bg-success bg-gradiant text-light text-center">
+       <p class="copyright">Copyright &copy; 2021</p>
+       <p class="source"><a class="link-light"
+           href="https://www.google.com/search?q=Murphy+clan+fun+facts&rlz=1C1CHBF_enUS870US876&sxsrf=ALeKk03O0hEm_HAE_krTRkE2gSkNwYVDBw%3A1621204998609&ei=BqChYOnUJM_9-gTeyKDIDw&oq=Murphy+clan+fun+facts&gs_lcp=Cgdnd3Mtd2l6EAM6BwgAEEcQsAM6BwgjELACECc6CAgAEA0QBRAeOggIABAIEA0QHjoECCEQClDbXli8aGDGbmgCcAJ4AIABkQGIAb8EkgEDMy4zmAEAoAEBqgEHZ3dzLXdpesgBB8ABAQ&sclient=gws-wiz&ved=0ahUKEwjp77Kgo8_wAhXPvp4KHV4kCPkQ4dUDCA4&uact=5">Google
+           Search on Murphy Fun Facts</a></p>
+       <p class="clan"><a class="link-light"
+           href="https://namestories.com/products/murphy-boy-name-print-classic?currency=USD&variant=32189120741441&utm_medium=cpc&utm_source=google&utm_campaign=Google%20Shopping&gclid=CjwKCAjwhYOFBhBkEiwASF3KGcSC62tNqgVvTc562Cd1wBUP8fDBqLdlNOR4zbEUO7pXY5oy0lKBiBoC1hgQAvD_BwE">
+           Name Stories</a></p>
+
+
+     </footer>
+
+     <script src="./form2.js"></script>
 
  </body>
 
