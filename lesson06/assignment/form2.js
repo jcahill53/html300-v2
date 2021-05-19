@@ -1,5 +1,5 @@
 function validateForm() {
-    var nameValue = document.forms["factForm"]["name"].value;
+    var nameValue = document.forms["factForm"]["full-name"].value;
     var eMailValue = document.forms["factForm"]["email"].value;
     var textArea1Value = document.forms["factForm"]["textArea1"].value;
     var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
