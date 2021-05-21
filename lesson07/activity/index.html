@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Activity 07 - Vue</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+  <div id="app">
+    <p v-bind:title="name">
+      <span v-if="name ==='joann'">
+        {{generateGreeting}} {{name}}
+      </span>
+      <span v-else>
+        Goodbye
+      </span>
+    </p>
+
+    <img b-if="imageShowing" v-bind:src="imageSrc">
+    <button v-if="!imageShowing">IMG BTN</button>
+
+    <!-- v-for is used to loop through an object -->
+    <ul>
+      <li v-for="num in favNumbers">
+        {{ num }}
+      </li>
+    </ul>
+    Counter: {{ counter }}
+
+    <button v-on:click="plusOne">Add one!</button>
+    <button v-on:click="addMore">Add three!</button>
+  </div>
+
+
+  <script type="text/javascript">
+    const CounterApp = {
+      name: "counter-app",
+      data() {
+        return {
+          counter: 0,
+          name: "joann",
+          greeting: this.generate.Greeting(),
+          favNumbers: [3, 6, 15],
+          imageShowing: false,
+          imageSrc: "https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fpicsum.photos%2F250%2F250"
+        }
+      },
+      methods: {
+        plusOne() {
+          this.count += 1
+        }
+      },
+      addMore(amt) {
+        this.counter += parseInt(amt)
+      },
+      toggleImage(){
+
+      },
+      generateGreeting() {
+        return "Hello there!"
+      }
+    }
+    Vue.createApp(CounterApp).mount('#app')
+  </script>
+</body>
+
+</html>
