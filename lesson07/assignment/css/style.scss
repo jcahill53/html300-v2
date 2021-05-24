@@ -187,64 +187,38 @@ body {
 
         // end of intro
 
-        // Home option 2 - Slides use slideshow2.js to automatically move through pictures
-        .slideshow {
-            display: flex;
-            flex-direction: row;
-            justify-content: flex start;
-            // position:relative;
-            width: 50%;
-            height: auto;
-            background-color: $basecolor;
-            margin: auto auto;
-            border: 10px ridge $basecolor4;
-            border-radius: 20px;
+        #app {
+            img {
+             width: 30%;
+             border: 1px ridge $basecolor;
 
-            .slides {
-                transition: transform 500ms ease-out;
-                position: relative;
+            };
 
-                .slide {
-                    width: 100%;
-                    height: auto;
-                    display: none;
-                    // justify-content: center;
-                    // align-items: center;
-                    transform: scale(0.5);
-                    opacity: 0.5;
-                    transition: all 3s ease-in-out;
-
-                    .slide-img {
-                        width: 100%;
-                    }
-
-                    // end of slide image
-                }
-
-                // end of indiviual slide formatting
-
-                .showing {
-                    width: 100%;
-                    height: auto;
-                    display: inline-block;
-                    justify-content: center;
-                    align-items: center;
-                    transform: scale(1);
-                    opacity: 1;
-                    z-index: 1;
-                    transition: all 0.5s ease-in-out;
-                }
-
-                // end of formatting when slide is showing
+            button {
+                border: 1px ridge $basecolor4;
+                font-size: 1rem;
+                color:$lightbase4;
+                background-color: $basecolor;
+                padding:.5rem;
 
             }
 
-            // end of slides
+            p{
+                font-size: 1.5rem;
+                color: $basecolor;
+                font-weight: bold;
+            }
+
 
 
         }
 
-        //end of slideshow
+      
+
+
+        
+
+     
     }
 
     //end of main content
