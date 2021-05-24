@@ -48,10 +48,31 @@
 
     <div id="app">
 
-      <img v-bind:src="chosenImage" v-bind:alt="chosenDescr">
-      <p>{{chosenDescr}}</p>
+      <!-- start of random image section -->
+      <div class="random">
+        <img v-bind:src="chosenImage" v-bind:alt="chosenDescr">
+        <p>{{chosenDescr}}</p>
 
-      <button @click="randomImage">See another image!</button>
+        <button @click="randomImage">See another image!</button>
+      </div>
+
+      <!-- start of family member section -->
+      <h2>Family Members</h2>
+
+      <div v-for="member in members" class="family">
+        <article class="familyMember">
+          <img v-bind:src="member.memberImage" v-bind:alt="member.memberName">
+          <div>
+            <h4>{{member.memberName}}</h4>
+            <p><span>born:</span>{{member.memberBirth}}</p>
+            <p v-if="member.memberDeath"><span>death:</span>{{member.memberDeath}}</p>
+            <button v-if="member.memberChildren" onclick="document.location= 'member.memberFamily'">Children</button>
+            <button v-else class="no-button"></button>
+            <!-- <button  v-if=member.memberChildren v-bind:href="member.memberFamily">Children </button> -->
+          </div>
+        </article>
+      </div>
+      <!-- end of family members div -->
 
     </div>
     <!-- end of app div -->
@@ -62,7 +83,7 @@
 
   </footer>
 
-  <script src="js/slideshow.js"></script>
+  <!-- Start of scripts -->
   <script src="js/activePage.js"></script>
   <script type="text/javascript">
     const CounterApp = {
@@ -87,16 +108,131 @@
               descr: "The Cahill family"
             }
           ],
+          members: [{
+              memberID: "001",
+              memberName: "John Edward Murphy",
+              memberFather: "James Francis Murphy",
+              memberMother: "Rose Walsh Murphy",
+              memberBirth: "01/01/1900",
+              memberDeath: "01/01/1900",
+              memberChildren: true,
+              memberImage: "./images/image2.jpg",
+              memberFamily: "members.html"
+            },
+            {
+              memberID: "002",
+              memberName: "Elizabeth Mary Gaffney Murphy",
+              memberFather: "Henry Christopher Gaffney",
+              memberMother: "Elizabeth Barkley Gaffney",
+              memberBirth: "01/01/1900",
+              memberDeath: "01/01/1900",
+              memberChildren: true,
+              memberImage: "./images/image1.jpg",
+              memberFamily: "members.html"
+            },
+
+            {
+              memberID: "003",
+              memberName: "Elizabeth Rose Murphy",
+              memberFather: "John Edward Murphy",
+              memberMother: "Elizabeth Mary Murphy",
+              memberBirth: "01/01/1900",
+              memberDeath: "",
+              memberChildren: false,
+              memberImage: "./images/image2.jpg",
+              memberFamily: ""
+            },
+            {
+              memberID: "004",
+              memberName: "John Edward Murphy",
+              memberFather: "John Edward Murphy",
+              memberMother: "Elizabeth Mary Murphy",
+              memberBirth: "01/01/1900",
+              memberDeath: "",
+              memberChildren: true,
+              memberImage: "./images/image1.jpg",
+              memberFamily: "members.html"
+            },
+            {
+              memberID: "005",
+              memberName: "Rosemary Elaine Murphy",
+              memberFather: "John Edward Murphy",
+              memberMother: "Elizabeth Mary Murphy",
+              memberBirth: "01/01/1900",
+              memberDeath: "",
+              memberChildren: false,
+              memberImage: "./images/image4.jpg",
+              memberFamily: "members.html"
+            },
+            {
+              memberID: "006",
+              memberName: "Richard Joseph Murphy",
+              memberFather: "John Edward Murphy",
+              memberMother: "Elizabeth Mary Murphy",
+              memberBirth: "01/01/1900",
+              memberDeath: "",
+              memberChildren: true,
+              memberImage: "./images/image4.jpg",
+              memberFamily: "members.html"
+            },
+            {
+              memberID: "007",
+              memberName: "Joann Mary Murphy Gaffney",
+              memberFather: "John Edward Murphy",
+              memberMother: "Elizabeth Mary Murphy",
+              memberBirth: "01/01/1900",
+              memberDeath: "",
+              memberChildren: true,
+              memberImage: "./images/image4.jpg",
+              memberFamily: "members-joann.html"
+            },
+            {
+              memberID: "008",
+              memberName: "Henry Christopher Murphy",
+              memberFather: "John Edward Murphy",
+              memberMother: "Elizabeth Mary Murphy",
+              memberBirth: "01/01/1900",
+              memberDeath: "",
+              memberChildren: true,
+              memberImage: "./images/image1.jpg",
+              memberFamily: "members.html"
+            },
+            {
+              memberID: "009",
+              memberName: "James Francis Murphy",
+              memberFather: "John Edward Murphy",
+              memberMother: "Elizabeth Mary Murphy",
+              memberBirth: "01/01/1900",
+              memberDeath: "",
+              memberChildren: false,
+              memberImage: "./images/image1.jpg",
+              memberFamily: "members.html"
+            },
+          ],
           chosenImage: "./images/image2.jpg",
           chosenDescr: "Click the button to see a new image!",
+          memberName: "",
+          memberFather: "",
+          memberMother: "",
+          memberBirth: "",
+          memberDeath: "",
+          memberChildren: true,
+          memberImage: "",
+          memberFamily: "",
+          chosenPage: "",
         }
       },
+
       methods: {
         randomImage() {
           var chosenNumber = Math.floor(Math.random() * this.imageSrcRandom.length);
           this.chosenImage = this.imageSrcRandom[chosenNumber].src;
           this.chosenDescr = this.imageSrcRandom[chosenNumber].descr;
         },
+        memberTree() {
+          this.chosenPage = this.members.member.memberFamily;
+        }
+
       }
     }
 

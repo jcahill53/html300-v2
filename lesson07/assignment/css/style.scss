@@ -67,6 +67,7 @@ body {
         color: $basecolor;
         font-size: 1.5rem;
         text-align: center;
+        padding:2rem 0;
 
     }
 
@@ -188,23 +189,6 @@ body {
         // end of intro
 
         #app {
-
-
-
-            img {
-
-                border: 2px ridge $basecolor;
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-                width: 40%;
-                padding: 10px;
-
-            }
-
-            ;
-
-
             button {
                 border: 1px ridge $basecolor;
                 font-size: 1rem;
@@ -215,6 +199,8 @@ body {
                 margin: 1rem auto;
             }
 
+
+
             p {
                 font-size: 1.25rem;
                 color: $basecolor;
@@ -223,9 +209,62 @@ body {
                 padding: 1rem;
             }
 
+            .random {
+                img {
+                    border: 2px ridge $basecolor;
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                    width: 40%;
+                    padding: 10px;
+                }
+            }
 
+            // end of random images
+
+            .family {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                margin-top: 2rem;
+    
+
+                .familyMember {
+                    border: 2px ridge $basecolor;
+                    margin: 2px;
+                    width: 30%;
+
+                    img {
+                        width: 100%;
+                        padding: 10px;
+                    }
+
+                    h4 {
+                        text-align: center;
+                        padding: 1rem 0;
+                    }
+
+                    p {
+                        font-size: 1rem;
+                        font-weight: none;
+                        padding: 0;
+                    }
+                }
+
+                .no-button {
+                    background-color:  $lightbasecolor3;
+                    border:none;
+                    color: $lightbasecolor3;
+                }
+            }
+
+            // end of members
 
         }
+
+        //end of app styling 
 
 
 
