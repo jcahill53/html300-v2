@@ -23,7 +23,7 @@
       <li class="list"> <a class="list-item" href="./fun-facts.html">Fun Facts</a></li>
     </ul>
   </nav>
-  </header>
+
   <main class="main-home">
 
     <h1 class="welcome">Welcome to the Murphy Family Website</h1>
@@ -49,19 +49,19 @@
       <!-- <button class="w3-button" onclick="plusDivs(-1)">&#10094; Prev</button> -->
       <article class="slides">
         <div class="slide">
-          <img class="slide-img" src="images/image1.JPG">
+          <img class="slide-img" src="images/image1.JPG" alt = "Rich with Family">
         </div>
         <div class="slide">
-          <img class="slide-img" src="images/image2.jpg">
+          <img class="slide-img" src="images/image2.jpg" alt = "Betsy at the Garden Center">
         </div>
         <div class="slide">
-          <img class="slide-img" class="slide" src="images/image3.jpg">
+          <img class="slide-img" src="images/image3.jpg" alt = "Betsy at a restaurant">
         </div>
         <div class="slide">
-          <img class="slide-img" src="images/image4.jpg">
+          <img class="slide-img" src="images/image4.jpg" alt = "Rosemary at a restaurant">
         </div>
         <div class="slide">
-          <img class="slide-img" src="images/image5.jpg">
+          <img class="slide-img" src="images/image5.jpg" alt = "The Murphy-Cahills">
         </div>
       </article>
       <!-- <button class="w3-button" onclick="plusDivs(1)">Next &#10095;</button> -->
@@ -76,7 +76,11 @@
 
   <script src="js/slideshow.js"></script>
   <script src="js/activePage.js"></script>
+      
+    }
 
+    Vue.createApp(CounterApp).mount('#app')
+  </script>
 </body>
 
 </html>

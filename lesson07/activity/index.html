@@ -12,59 +12,68 @@
 
 <body>
   <div id="app">
-    <p v-bind:title="name">
-      <span v-if="name ==='joann'">
-        {{generateGreeting}} {{name}}
+    <p v-bind:title="greeting">
+      <span v-if="name === 'Joann'">
+        {{ generateGreeting() }} {{ name }}
       </span>
       <span v-else>
         Goodbye
       </span>
     </p>
+    <img v-if="imageShowing" v-bind:src="imageSrc">
+    <button v-on:click="toggleImage">IMG BTN</button>
 
-    <img b-if="imageShowing" v-bind:src="imageSrc">
-    <button v-if="!imageShowing">IMG BTN</button>
-
-    <!-- v-for is used to loop through an object -->
     <ul>
       <li v-for="num in favNumbers">
         {{ num }}
       </li>
     </ul>
-    Counter: {{ counter }}
-
+    <p>Counter: {{ counter }}</p>
     <button v-on:click="plusOne">Add one!</button>
-    <button v-on:click="addMore">Add three!</button>
+    <button v-on:click="addMore(3)">Add three!</button>
+    <button @click="randomImage">Choose!</button>
+    <img v-bind:src="chosenImage" alt="Random image of the Murphy Family">
+    <p>{{chosenImage}}</p>
   </div>
-
-
   <script type="text/javascript">
     const CounterApp = {
-      name: "counter-app",
+      name: "counter app",
       data() {
         return {
-          counter: 0,
-          name: "joann",
-          greeting: this.generate.Greeting(),
+          laterDater: undefined,
+          counter: '0',
+          name: "Joann",
+          greeting: this.generateGreeting(),
           favNumbers: [3, 6, 15],
           imageShowing: false,
-          imageSrc: "https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fpicsum.photos%2F250%2F250"
+          imageSrc: "https://picsum.photos/200/30",
+          imageSrcRandom: ["./images/image1.jpg", "./images/image2.jpg",
+            "./images/image3.jpg", "./images/image4.jpg", "./images/image5.jpg"
+          ],
+          chosenImage: "./images/image2.jpg",
         }
       },
       methods: {
         plusOne() {
-          this.count += 1
+          this.counter += 1
+        },
+        toggleImage() {
+          this.imageShowing = !this.imageShowing
+        },
+        addMore(amt) {
+          this.counter += parseInt(amt)
+        },
+        generateGreeting() {
+          return "Hello there! "
+        },
+        randomImage() {
+          var chosenNumber = Math.floor(Math.random() * this.imageSrcRandom.length);
+          this.chosenImage = this.imageSrcRandom[chosenNumber];
         }
-      },
-      addMore(amt) {
-        this.counter += parseInt(amt)
-      },
-      toggleImage(){
-
-      },
-      generateGreeting() {
-        return "Hello there!"
       }
+      
     }
+
     Vue.createApp(CounterApp).mount('#app')
   </script>
 </body>
