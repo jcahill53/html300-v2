@@ -47,14 +47,15 @@
       enim. Sed libero enim sed faucibus turpis in eu mi.</p>
 
     <div id="app">
-    
-      <img v-bind:src="chosenImage" alt="Random image of the Murphy Family">
+
+      <img v-bind:src="chosenImage" v-bind:alt="chosenDescr">
       <p>{{chosenDescr}}</p>
+
       <button @click="randomImage">See another image!</button>
+
     </div>
+    <!-- end of app div -->
   </main>
-
-
 
   <footer class="footer">
     <p class="copyright">Copyright &copy; 2021</p>
