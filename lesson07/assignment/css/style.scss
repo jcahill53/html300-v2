@@ -67,7 +67,7 @@ body {
         color: $basecolor;
         font-size: 1.5rem;
         text-align: center;
-        padding:2rem 0;
+        padding: 2rem 0;
 
     }
 
@@ -188,7 +188,7 @@ body {
 
         // end of intro
 
-        #app {
+        .application {
             button {
                 border: 1px ridge $basecolor;
                 font-size: 1rem;
@@ -225,15 +225,15 @@ body {
             .family {
                 display: flex;
                 flex-direction: row;
-                justify-content: center;
+                justify-content: space-around;
                 align-items: center;
                 flex-wrap: wrap;
-                margin-top: 2rem;
-    
+                // margin: 2rem;
+
 
                 .familyMember {
                     border: 2px ridge $basecolor;
-                    margin: 2px;
+                    margin: 1rem;
                     width: 30%;
 
                     img {
@@ -253,10 +253,25 @@ body {
                     }
                 }
 
-                .no-button {
-                    background-color:  $lightbasecolor3;
-                    border:none;
-                    color: $lightbasecolor3;
+                .date-of-death {
+                    min-height: 2rem;
+                }
+
+                .member-children {
+                    width: 30%;
+                    min-height: 2rem;
+                    display: block;
+                    margin: .5rem auto;
+
+                    a {
+                        text-align: center;
+                        text-decoration: none;
+                        padding: .5rem  1rem;
+                        border: 2px ridge $basecolor;
+                        background-color: $basecolor;
+                        color: $lightbase4;
+
+                    }
                 }
             }
 
@@ -419,11 +434,16 @@ body {
             }
 
             p {
-                padding: .5rem;
+                padding: .25rem;
+            }
+
+            h3 {
+                padding:.5rem;
             }
 
             button {
-                padding: .5rem;
+                padding:.5rem;
+                margin-top:1rem;
                 background-color: $basecolor;
                 color: $lightbasecolor3;
             }
