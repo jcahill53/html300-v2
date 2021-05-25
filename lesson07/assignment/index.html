@@ -19,7 +19,7 @@
   <nav class="nav">
     <ul class="unord-list">
       <li class="list"> <a class="list-item" href="./index.html">Home</a></li>
-      <li class="list"> <a class="list-item" href="./members.html">Family Members</a></li>
+      <li class="list"> <a class="list-item" href="./members.html">Family Tree</a></li>
       <li class="list"> <a class="list-item" href="./blog.html">Blog</a></li>
       <li class="list"> <a class="list-item" href="./fun-facts.html">Fun Facts</a></li>
     </ul>
@@ -46,8 +46,7 @@
       dignissim
       enim. Sed libero enim sed faucibus turpis in eu mi.</p>
 
-    <div id="app">
-      <div class="application">
+    <div id="app"><div class="application">
         <!-- start of random image section -->
         <div class="random">
           <img v-bind:src="chosenImage" v-bind:alt="chosenDescr">
@@ -246,8 +245,7 @@
             let fa = a.memberName.toLowerCase(),
               fb = b.memberName.toLowerCase();
             if (fa < fb) {
-              return -1
-            }
+              return -1}
             if (fa > fb) {
               return 1
             }

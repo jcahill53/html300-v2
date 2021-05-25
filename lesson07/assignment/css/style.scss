@@ -50,7 +50,6 @@ body {
         text-align: center;
         padding-top: 2rem;
         font-size: 2.5rem;
-        // padding-bottom: 2rem;
     }
 
     h2,
@@ -254,23 +253,25 @@ body {
                 }
 
                 .date-of-death {
-                    min-height: 2rem;
+                    min-height: 1.5rem;
                 }
 
-                .member-children {
-                    width: 30%;
+                .member-children {  
                     min-height: 2rem;
                     display: block;
-                    margin: .5rem auto;
+                    margin: .5rem auto 1rem auto;
 
-                    a {
-                        text-align: center;
+                    a {                     
                         text-decoration: none;
-                        padding: .5rem  1rem;
-                        border: 2px ridge $basecolor;
+                        text-align: center;
+                        padding: .5rem .5rem;
+                        border: 1px ridge $basecolor;
                         background-color: $basecolor;
                         color: $lightbase4;
-
+                        display: block;
+                        margin: .5rem auto;
+                        min-width: 5rem;
+                        width: 30%;
                     }
                 }
             }
@@ -297,8 +298,7 @@ body {
         justify-content: flex-start;
         align-items: center;
         flex-wrap: wrap;
-        // margin: 0 0;
-
+ 
         .events {
             width: 20%;
             margin-left: 5%;
@@ -438,12 +438,12 @@ body {
             }
 
             h3 {
-                padding:.5rem;
+                padding: .5rem;
             }
 
             button {
-                padding:.5rem;
-                margin-top:1rem;
+                padding: .5rem;
+                margin-top: 1rem;
                 background-color: $basecolor;
                 color: $lightbasecolor3;
             }
